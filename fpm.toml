@@ -3,18 +3,17 @@ version = "0.1.0"
 license = "license"
 author = "Oscar Garcia-Cabrejo"
 maintainer = "khaors@gmail.com"
-copyright = "Copyright 2024, khaors"
-[dependencies]
-stdlib = { git="https://github.com/fortran-lang/stdlib", branch="stdlib-fpm" }
+copyright = "Copyright 2025, Oscar Garcia-Cabrejo"
 [build]
 auto-executables = true
 auto-tests = true
-auto-examples = true
+auto-examples = false
 module-naming = false
+external-modules=["/ucrt64/include/fortran_stdlib/GNU-14.1.0"]
+link=["fortran_stdlib"]
 [install]
 library = false
 [fortran]
 implicit-typing = false
 implicit-external = false
 source-form = "free"
-
