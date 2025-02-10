@@ -12,6 +12,8 @@ program test_stlib
     logical :: add_blank_line, exist, indent, time_stamp, opened
     integer,allocatable :: log_units(:)
     type(logger_type) :: my_logger
+    character(10) str
+    integer :: nums(10) = (/ 1,4,0,2,3,5,6,7,8,9 /)
     
     val=12.0_wp;
     write(*,*) global_logger%log_units_assigned()
@@ -100,11 +102,16 @@ program test_stlib
         write(*,*) 'unable to open the fifth log file';
     endif
     !
+    !
+    !
+    write(str,'(10i1)') nums;    
+    !
     ! Test levels
     !
     call global_logger%configure(level=all_level);
     call global_logger%log_message('All level');
     call global_logger%log_message('This message should be always printed');
+    call global_logger%log_message(str);
     call global_logger%log_debug('Debug level message');
     call global_logger%log_information('Information level message');
     call global_logger%log_warning('Warning level message');
