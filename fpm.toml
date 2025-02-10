@@ -9,7 +9,7 @@ auto-executables = true
 auto-tests = true
 auto-examples = false
 module-naming = false
-external-modules=["/ucrt64/include/fortran_stdlib/GNU-14.1.0"]
+#external-modules=["/ucrt64/include/fortran_stdlib/GNU-14.1.0"]
 link=["fortran_stdlib"]
 [install]
 library = false
